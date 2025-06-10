@@ -11,6 +11,21 @@
 - [ ] Write `syncProducts.js` to push products to Typesense
 - [ ] Schedule daily reindexing
 
+## 🔐 Persist Access Tokens
+
+- [ ] Install Prisma and PostgreSQL client
+- [ ] Create `shop` model in `schema.prisma` with domain + accessToken
+- [ ] Generate Prisma client and connect it in the project
+- [ ] Update the OAuth callback to store the access token in the DB
+- [ ] Add a helper to retrieve access token by shop domain
+
+## 🔁 Product Webhook + Typesense Sync
+
+- [ ] Register Shopify webhook for `products/update`
+- [ ] Create a `/webhooks/products` endpoint in Express
+- [ ] Parse webhook body and send product data to Typesense
+- [ ] Use Axios or Typesense SDK to upsert product in search index
+
 ## 🖥️ Embedded Admin App (React + Polaris)
 - [ ] Create embedded React app with App Bridge
 - [ ] Build Filter Management UI (tag, size, price range)
