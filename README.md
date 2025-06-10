@@ -23,4 +23,6 @@ This project provides a basic Express.js server with Shopify OAuth support. It w
     The server runs on [http://localhost:3000](http://localhost:3000).
     Visit `/auth?shop=your-store.myshopify.com` to begin OAuth.
 
-The sample app stores sessions in memory. Restarting the server will clear all sessions.
+Create a PostgreSQL database and set the `DATABASE_URL` environment variable so sessions can be stored using Prisma.
+Run `npx prisma migrate dev` to create the required tables.
+Sessions will then persist in the database instead of memory.

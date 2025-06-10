@@ -1,13 +1,15 @@
 const express = require('express');
 const { shopifyApi } = require('@shopify/shopify-api');
-const { MemorySessionStorage } = require('@shopify/shopify-app-session-storage-memory');
+const { PrismaClient } = require('@prisma/client');
+const { PrismaSessionStorage } = require('@shopify/shopify-app-session-storage-prisma');
 
 const app = express();
 
 const PORT = process.env.PORT || 3000;
 
-// In-memory session storage (not for production use)
-const sessionStorage = new MemorySessionStorage();
+// Prisma-based session storage with PostgreSQL
+const prisma = new PrismaClient();
+const sessionStorage = new PrismaSessionStorage(prisma);
 
 const shopify = shopifyApi({
   apiKey: process.env.SHOPIFY_API_KEY || '',
@@ -38,7 +40,7 @@ app.get('/auth/callback', async (req, res) => {
       rawResponse: res,
     });
 
-    // Persist session in memory
+    // Persist session in the database
     await sessionStorage.storeSession(session);
 
     res.redirect(`/?shop=${session.shop}`);
