@@ -52,3 +52,9 @@
 - [ ] Add privacy policy & TOS pages
 - [ ] Test in multiple Shopify themes
 - [ ] Prepare App Store assets
+## 🎨 Theme Extension
+
+- [ ] Create App Block with settings (show search bar, filters, etc.)
+- [ ] Inject filter UI using Tailwind + Alpine.js
+- [ ] Connect to Typesense search API for filtering
+- [ ] Add instant search bar with suggestions
