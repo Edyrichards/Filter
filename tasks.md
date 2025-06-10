@@ -1,7 +1,7 @@
 # Codex Tasks – Shopify Product Filter & Search App
 
 ## 🧱 Setup
-- [ ] Create a Node.js + Express server
+- [x] Create a Node.js + Express server
 - [ ] Add Shopify OAuth and App Bridge integration
 - [ ] Configure Prisma + PostgreSQL
 - [ ] Setup Typesense client and schema creation
